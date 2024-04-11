@@ -2,9 +2,9 @@
 
 *Jiaxing Huang, Yaoru Luo, Yuanhao Guo, Wenjing Li, Zichen Wang, Guole Liu and Ge Yang*
 
-J. Huang, Y. Luo and  Y. Guo contributed equally to this work. 
+J. Huang, Y. Luo, and Y. Guo contributed equally to this work. 
 
-Architecture of the MRE. 
+Architecture of the Multi-resolution Encoder (MRE). 
 
 ![MRE](./figures/MRE.png)
 
