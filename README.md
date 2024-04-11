@@ -51,17 +51,17 @@ Below lines will run the training code with default setting in the *train_MRE.py
 
 ```
 Set up
-# the model type
-model_choice = ['PVT_MRE', 'UNet_MRE']
-# the dataset type
-dataset_list = ['er', 'retina', 'mito', 'stare']
-# the encoder type
-encoder_choice = ['unet','pvt_tiny', 'pvt_small', 'pvt_base', 'pvt_large']
-# the loss type
-loss_choice = ['single', 'up_sampling', 'multi_layer', 'hierarchical_fusing']
-txt_choice = ['train_drive.txt', 'train_mito.txt',  'train_er.txt','train_stare.txt']
+ # the model type
+ model_choice = ['PVT_MRE', 'UNet_MRE']
+ # the dataset type
+ dataset_list = ['er', 'retina', 'mito', 'stare']
+ # the encoder type
+ encoder_choice = ['unet','pvt_tiny', 'pvt_small', 'pvt_base', 'pvt_large']
+ # the loss type
+ loss_choice = ['single', 'up_sampling', 'multi_layer', 'hierarchical_fusing']
+ txt_choice = ['train_drive.txt', 'train_mito.txt',  'train_er.txt','train_stare.txt']
 Run 
-python train_MRE.py
+ python train_MRE.py
 ```
 
 ### Inference
