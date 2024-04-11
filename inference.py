@@ -50,7 +50,7 @@ def pre_process_il(images, labels):
     return cropped_imgs, cropped_labels
 
 
-def eval_model(opts, index):
+def eval_model(opts):
     val_batch_size = opts["eval_batch_size"]
     dataset_type = opts['dataset_type']
     load_epoch = opts['load_epoch']
@@ -123,7 +123,7 @@ def eval_model(opts, index):
                     pred_compute = p_seg
 
                 for i in range(len(images)):
-                        now_dir = model_score_dir + '_' + str(index)
+                        now_dir = model_score_dir
                         os.makedirs(now_dir, exist_ok=True)
                         np.save(os.path.join(now_dir, img_name[i].split('.')[0] + '.npy'),
                                 pred_save[i][0].cpu().numpy().astype(np.float32))
@@ -180,8 +180,8 @@ if __name__ == "__main__":
     opts["eval_batch_size"] = 38
     opts["gpu_list"] = "0,1,2,3"
     opts[
-        "train_dir"] = "/mnt/data1/hjx_code/MHCNet_code/train_logs/er_train_MHCnet_Hierarchical_Fusing_Loss_iouloss_16_0.17_30_0.3_100_20231229_0.0005_warmup_random_crop/checkpoints/"
-    opts["eval_data_dir"] = "/mnt/data1/hjx_data/dataset_txts/test_er.txt"
+        "train_dir"] = "./train_logs/erPVT_MRE_pvt_tiny_hierarchical_fusing_warm_up_multi_step_16_0.0001_100_0.3_20_80_20240411_0.05_random_crop/checkpoints/"
+    opts["eval_data_dir"] = "./dataset_txts/test_er.txt"
     opts['model_type'] = 'PVT_MRE'
     opts['encoder_type'] = 'pvt_tiny'
     opts["num_channels"] = 1
@@ -189,10 +189,5 @@ if __name__ == "__main__":
     opts["loss_type"] = "hierarchical_fusing"
     opts["load_epoch"] = 'best'
 
-    best_iou = 0.0
-    for i in range(10):
-        print('************now time//' + str(i))
-        now_iou = eval_model(opts, i)
-        if now_iou > best_iou:
-            best_iou = now_iou
-    print('final best iou =' + str(best_iou))
+
+    eval_model(opts)
