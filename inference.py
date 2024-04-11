@@ -180,7 +180,7 @@ if __name__ == "__main__":
     opts["eval_batch_size"] = 38
     opts["gpu_list"] = "0,1,2,3"
     opts[
-        "train_dir"] = "./train_logs/erPVT_MRE_pvt_tiny_hierarchical_fusing_warm_up_multi_step_16_0.0001_100_0.3_20_80_20240411_0.05_random_crop/checkpoints/"
+        "train_dir"] = "./train_logs/er_PVT_MRE_pvt_tiny_hierarchical_fusing_warm_up_multi_step_16_0.0001_100_0.3_20_80_20240411_0.05_random_crop/checkpoints/"
     opts["eval_data_dir"] = "./dataset_txts/test_er.txt"
     opts['model_type'] = 'PVT_MRE'
     opts['encoder_type'] = 'pvt_tiny'
