@@ -2,7 +2,7 @@
 
 *Jiaxing Huang, Yaoru Luo, Yuanhao Guo, Wenjing Li, Zichen Wang, Guole Liu and Ge Yang*
 
-J. Huang, Y. Luo, and Y. Guo contributed equally to this work. 
+J. Huang, Y. Luo and  Y. Guo contributed equally to this work. 
 
 Architecture of the Multi-resolution Encoder (MRE). 
 
@@ -14,7 +14,7 @@ If you have any questions, please feel free to contact us!
 
 ## Dataset
 
-To develop deep learning segmentation models, we construct two custom image datasets: ER and MITO, for the ER network and the mitochondrial network, respectively. To test the generalization capability of our deep learning models, we also use two public datasets of the retinal blood vessel network: DRIVE and STARE.
+To develop deep learning segmentation models, we construct two custom image datasets: ER and MITO (openly accessible at IEEE DataPort (https://dx.doi.org/10.21227/t2he-zn97) ), for the ER network and the mitochondrial network, respectively. To test the generalization capability of our deep learning models, we also use two public datasets of the retinal blood vessel network: DRIVE and STARE.
 
 ### Preparing Dataset
 
@@ -45,17 +45,23 @@ pip install -r requirements.txt or conda install --yes --file requirements.txt
 
 ### Training
 
-In this project, we used five models UNet++, HRNet, TransUNet, MedT, U-Net&MRE and PVT&MRE in the experimental phase. To facilitate the training of the different models, we created six different training files.
+In this project, we used nine basic models UNet, UNet++, nnUNet, HRNet, SAM, TransUNet, MedT, UT-Net, and PVT (tiny) as baseline. We apply our Multi-resolution Encoder in U-Net and PVT (tiny) in the experimental phase to valid the effectiveness of our method. To facilitate the training of the U-Net&MRE and PVT&MRE, we provide the training files.
 
-Below lines will run the training code with default setting in the file.
+Below lines will run the training code with default setting in the *train_MRE.py* file.
 
 ```
-python train_unet_plus.py
-python train_hrnet.py
-python train_transunet.py
-python train_medt.py
-python train_unet_MRE.py
-python train_pvt_MRE.py
+Set up
+# the model type
+model_choice = ['PVT_MRE', 'UNet_MRE']
+# the dataset type
+dataset_list = ['er', 'retina', 'mito', 'stare']
+# the encoder type
+encoder_choice = ['unet','pvt_tiny', 'pvt_small', 'pvt_base', 'pvt_large']
+# the loss type
+loss_choice = ['single', 'up_sampling', 'multi_layer', 'hierarchical_fusing']
+txt_choice = ['train_drive.txt', 'train_mito.txt',  'train_er.txt','train_stare.txt']
+Run 
+python train_MRE.py
 ```
 
 ### Inference
@@ -64,11 +70,10 @@ In order to obtain segmentation results and evaluate model's performance under d
 
 ```
 Set up
- model_choice = ['unet', 'unetPlus','unet_MRE','pvt_MRE']
- loss_choice = ['Single_Loss','Up_Sampling_Loss',                      		'Multi_Layer_Loss','Hierarchical_Fusing_Loss']
+ model_choice = ['PVT_MRE', 'UNet_MRE]
+ loss_choice = ['single', 'up_sampling', 'multi_layer', 'hierarchical_fusing']
  dataset_list = ['er', 'retina', 'mito', 'stare']
- txt_choice = ['test_drive.txt', 'train_drive.txt', 'train_mito.txt', 'test_mito_cbmi.txt', 'train_er.txt',
-                  'test_er.txt', 'test_stare.txt', 'train_stare.txt']
+ txt_choice = ['test_drive.txt', 'test_mito.txt', 'test_er.txt', 'test_stare.txt']
 Run 
  python inference.py
 ```
