@@ -70,7 +70,8 @@ In order to obtain segmentation results and evaluate model's performance under d
 
 ```
 Set up
- model_choice = ['PVT_MRE', 'UNet_MRE]
+ model_choice = ['PVT_MRE', 'UNet_MRE']
+ encoder_choice = ['unet','pvt_tiny', 'pvt_small', 'pvt_base', 'pvt_large']
  loss_choice = ['single', 'up_sampling', 'multi_layer', 'hierarchical_fusing']
  dataset_list = ['er', 'retina', 'mito', 'stare']
  txt_choice = ['test_drive.txt', 'test_mito.txt', 'test_er.txt', 'test_stare.txt']
