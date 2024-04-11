@@ -1,4 +1,3 @@
-from __future__ import print_function
 import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "0,1,2,3"
 import sys
@@ -403,11 +402,11 @@ if __name__ == '__main__':
     opts["loss_criterion"] = "iou" # the basic type of loss function
     opts["loss_type"] = "hierarchical_fusing"
     opts["num_epochs"] = 100
-    opts["train_data_dir"] = "/mnt/data1/hjx_data/dataset_txts/train_er.txt"
-    opts["eval_data_dir"] = "/mnt/data1/hjx_data/dataset_txts/test_er.txt"
+    opts["train_data_dir"] = "./dataset_txts/train_er.txt"
+    opts["eval_data_dir"] = "./dataset_txts/test_er.txt"
     opts["train_batch_size"] = 16
     opts["eval_batch_size"] = 38
-    opts["lr"] = 0.0001
+    opts["lr"] = 0.0005
     opts["warm_up_epochs"] = 20
     opts["lr_milestones"] = [80]
     opts["threshold"] = 0.3
