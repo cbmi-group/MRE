@@ -6,7 +6,7 @@ J. Huang, Y. Luo and  Y. Guo contributed equally to this work.
 
 Architecture of the Multi-resolution Encoder (MRE). 
 
-![MRE](./figures/architecture.png)
+<img src="./figures/architecture.png" style="width: 80%; height: auto;">
 
 Contact: *Jiaxing Huang* huangjiaxing2021@ia.ac.cn.
 
