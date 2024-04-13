@@ -82,8 +82,8 @@ Run
 This video showcases the results of our algorithm specifically tailored for the visualization of the endoplasmic reticulum (ER) network within cellular microscopy footage. Each frame of the video has been meticulously processed by the algorithm to segment and highlight the ER, allowing viewers to observe the network's intricate details in real-time. Notably, the algorithm distinguishes and accentuates the ER's tubules and nodes, offering a clear view of the cellular structure. This visualization not only serves as a vivid demonstration of the algorithm's capabilities in capturing dynamic cellular processes but also provides an essential resource for researchers to analyze the ER's morphology and function with unprecedented clarity and precision.
 
 <video id="video" controls="" preload="none" poster="封面">
-      <source id="mp4" src="./figures/seg_results.mp4" type="video/mp4">
-</videos>
+    <source id="mp4" src="./figures/seg_results.mp4" type="video/mp4">
+</video>
 
 ## Citation
 
