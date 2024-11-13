@@ -4,7 +4,7 @@
 
 J. Huang, Y. Luo and  Y. Guo contributed equally to this work. 
 
-This work has been accepted by the Bioinformatics and this is the official code for the paper; please see the [link](https://academic.oup.com/bioinformatics/article/40/10/btae559/7762635)for the paper.
+This work has been accepted by the Bioinformatics and this is the official code for the paper; please see the [link](https://academic.oup.com/bioinformatics/article/40/10/btae559/7762635) for the paper.
 
 Architecture of the Multi-resolution Encoder (MRE). 
 
